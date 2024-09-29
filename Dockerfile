@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-RUN mkdir /opt/app
+RUN mkdir -p /opt/app
 
 COPY target/gcp-connector-0.0.1-SNAPSHOT.jar /opt/app
 
