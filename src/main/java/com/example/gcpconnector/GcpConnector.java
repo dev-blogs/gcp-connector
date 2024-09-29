@@ -14,7 +14,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Component
 public class GcpConnector {
-    private static final String BUCKET_NAME = "cubernetes-bucket-my-test-project-371310";
+    private static final String BUCKET_NAME = "gcp-bucker-spark-learning-374112";
     private static final String KEY_PATH = "/user/data/key.json";
     private static final String FILE_PATH = "/opt/app/data.txt";
 
