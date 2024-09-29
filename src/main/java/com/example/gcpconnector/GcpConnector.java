@@ -14,12 +14,12 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Component
 public class GcpConnector {
-    private static final String BUCKET_NAME = "project-1-my-test-project-371310";
-    private static final String PATH = "C:\\Users\\zheka\\learn\\my-test-project-371310-1ac04776adb7.json";
-    private static final String FILE_PATH = "C:\\Users\\zheka\\learn\\gcp_cert.png";
+    private static final String BUCKET_NAME = "cubernetes-bucket-my-test-project-371310";
+    private static final String KEY_PATH = "/user/data/key.json";
+    private static final String FILE_PATH = "/opt/app/data.txt";
 
     public void checkGcp() throws IOException {
-        String SERVICE_ACCOUNT_JSON_PATH = PATH;
+        String SERVICE_ACCOUNT_JSON_PATH = KEY_PATH;
 
         Storage storage =
                 StorageOptions.newBuilder()
@@ -62,7 +62,7 @@ public class GcpConnector {
     }
 
     public void checkGcp2() throws IOException {
-        Credentials credentials = GoogleCredentials.fromStream(new FileInputStream(PATH));
+        Credentials credentials = GoogleCredentials.fromStream(new FileInputStream(KEY_PATH));
         Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
 
         Bucket bucket = storage.get(BUCKET_NAME);
