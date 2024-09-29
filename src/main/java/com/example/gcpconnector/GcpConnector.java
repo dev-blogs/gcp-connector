@@ -23,7 +23,7 @@ public class GcpConnector {
 
         Storage storage =
                 StorageOptions.newBuilder()
-                        .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(SERVICE_ACCOUNT_JSON_PATH)))
+                        //.setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(SERVICE_ACCOUNT_JSON_PATH)))
                         .build()
                         .getService();
 
