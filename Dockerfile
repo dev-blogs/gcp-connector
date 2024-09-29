@@ -1,4 +1,4 @@
-FROM openjdk11:latest
+FROM openjdk:11
 
 RUN mkdir /opt/app
 
