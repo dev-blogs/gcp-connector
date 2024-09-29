@@ -17,6 +17,7 @@ public class GcpConnector {
     private static final String BUCKET_NAME = "gcp-bucker-spark-learning-374112";
     private static final String KEY_PATH = "/user/data/key.json";
     private static final String FILE_PATH = "/opt/app/data.txt";
+    private static final String PROJECT_ID = "spark-learning-374112";
 
     public void checkGcp() throws IOException {
         String SERVICE_ACCOUNT_JSON_PATH = KEY_PATH;
@@ -24,6 +25,7 @@ public class GcpConnector {
         Storage storage =
                 StorageOptions.newBuilder()
                         //.setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(SERVICE_ACCOUNT_JSON_PATH)))
+                        .setProjectId(PROJECT_ID)
                         .build()
                         .getService();
 
